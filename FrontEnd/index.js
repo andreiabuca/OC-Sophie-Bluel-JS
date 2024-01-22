@@ -4,7 +4,7 @@ const filtersContainer = containerFilter()
 
 const categories = [
     {
-        "id": 0,
+        "id": 4,
         "name": "Tous"
 
     },
@@ -28,15 +28,30 @@ function containerFilter() {
 }
 
 categories.forEach(category => {
-const listFilter = document.createElement("li")
-const button = document.createElement("button")
-button.textContent = category.name
-button.classList.add("filter-button")
+    const listFilter = document.createElement("li")
+    const button = document.createElement("button")
+    button.textContent = category.name
+    button.classList.add("filter-button")
 
-listFilter.appendChild(button)
-filtersContainer.appendChild(listFilter)
-        
-}) 
+    //addEventListener
+    button.addEventListener("click", () => filterWorksByCategory(category.id))
+
+    listFilter.appendChild(button)
+    filtersContainer.appendChild(listFilter)
+
+})
+
+function filterWorksByCategory(categoryId) {
+    if (categoryId === 4) {
+        generateWorks(works)
+    }
+    else {
+        const filteredWorks = works.filter(work => work.categoryId === categoryId)
+        generateWorks(filteredWorks)
+    }
+}
+
+
 
 const importWorks = () => {
     fetch("http://localhost:5678/api/works")
