@@ -1,5 +1,42 @@
 const gallery = document.querySelector(".gallery")
+let works = []
+const filtersContainer = containerFilter()
 
+const categories = [
+    {
+        "id": 0,
+        "name": "Tous"
+
+    },
+
+    {
+        "id": 1,
+        "name": "Objets"
+    },
+    {
+        "id": 2,
+        "name": "Appartements"
+    },
+    {
+        "id": 3,
+        "name": "Hotels & restaurants"
+    }
+]
+
+function containerFilter() {
+    return document.getElementById("filters")
+}
+
+categories.forEach(category => {
+const listFilter = document.createElement("li")
+const button = document.createElement("button")
+button.textContent = category.name
+button.classList.add("filter-button")
+
+listFilter.appendChild(button)
+filtersContainer.appendChild(listFilter)
+        
+}) 
 
 const importWorks = () => {
     fetch("http://localhost:5678/api/works")
@@ -11,8 +48,10 @@ const importWorks = () => {
 
 
         })
-    
 }
+
+
+
 
 importWorks()
 
@@ -35,6 +74,6 @@ const generateWorks = works => {
         article.appendChild(titre)
 
 
-        
+
     });
 }
