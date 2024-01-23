@@ -52,6 +52,7 @@ body {
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
+	background-color: #FFFEF8;
 }
 header {
 	display: flex;
@@ -167,6 +168,12 @@ a {
 	width: 100%;
 
 }
+
+.gallery p {
+	margin-top: 7px;
+
+}
+
 #contact {
 	width: 50%;
 margin: auto;
@@ -213,6 +220,6 @@ input[type="submit"]{
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
-	margin: 2em
+	margin: 2em 
 }
 
