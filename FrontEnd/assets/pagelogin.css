@@ -238,6 +238,12 @@ a {
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
+.message-email {
+    display: none;
+    margin-top: 5px;
+    color: #ff0000;
+}
+
 input[type="submit"] {
     font-family: 'Syne';
     font-weight: 700;

@@ -92,3 +92,29 @@ const generateWorks = works => {
 
     });
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const token = localStorage.getItem('token')
+    const loginElement = document.getElementById('login')
+    const logoutElement = document.getElementById('logout')
+    const modalButton = document.querySelector('.projets-modifier') 
+
+    console.log('Token:', token)
+
+if (token) {
+    logoutElement.style.display = 'block'
+    loginElement.style.display = 'none'
+
+    modalButton.style.display = 'flex'
+
+} else {
+    logoutElement.style.display = 'none'
+    loginElement.style.display = 'block'
+    modalButton.style.display = 'none'
+}
+
+
+
+}); 
+
