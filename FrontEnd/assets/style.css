@@ -306,7 +306,7 @@ a {
 
 .modal-aside {
 	position: fixed;
-	display: none;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 	top: 0;
@@ -325,16 +325,16 @@ a {
 
 }
 
-.close {
-	font-size: 30px;
+.js-close-modal {
+	font-size: 20px;
 	float: right;
 }
 
 hr {
 	width: 265px;
     position: absolute;
-    bottom: 95px;
-    right: 263px;
+    bottom: 155px;
+    right: 500px;
 	color: #B3B3B3;
 }
 
@@ -361,6 +361,10 @@ hr {
 	font-size: 20px;
 	margin-bottom: 20px;
 	margin-top: 30px;
+}
+
+.modal-gallery {
+	display: flex;
 }
 
 .gallery {

@@ -59,17 +59,17 @@
 
 					<div id="modifier-btn">
 						<i class="far fa-pen-to-square"></i>
-						<button id="btn-modal">modifier</button>
+						<button id="btn-modal" class="js-modal" href="#modal">modifier</button>
 					</div>
 				</div>
 			</div>
 
-			<aside id="modal" class="modal-aside" aria-hidden="true" role="dialog">
-				<div class="modal-wrapper">
-					<span class="close">&times;</span>
+			<aside id="modal" class="modal-aside js-modal" aria-hidden="true" role="dialog" style="display: none;">
+				<div class="modal-wrapper js-modal-stop">
+					<i class="fa-solid fa-xmark js-close-modal"></i>
 					<p class="txt-galerie">Galerie Photo</p>
-					<div class></div>
-					<hr>
+					<div class="modal-gallery"></div>
+					<!-- <hr> -->
 					<label for="imageInput" class="btn-ajouter">Ajouter une photo</label>
 					<input type="file" id="imageInput" accept="image/*" style="display: none;">
 

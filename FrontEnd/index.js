@@ -94,27 +94,64 @@ const generateWorks = works => {
 }
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const token = localStorage.getItem('token')
     const loginElement = document.getElementById('login')
     const logoutElement = document.getElementById('logout')
-    const modalButton = document.querySelector('.projets-modifier') 
+    const modalButton = document.querySelector('.projets-modifier')
 
     console.log('Token:', token)
 
-if (token) {
-    logoutElement.style.display = 'block'
-    loginElement.style.display = 'none'
+    if (token) {
+        logoutElement.style.display = 'block'
+        loginElement.style.display = 'none'
 
-    modalButton.style.display = 'flex'
+        modalButton.style.display = 'flex'
 
-} else {
-    logoutElement.style.display = 'none'
-    loginElement.style.display = 'block'
-    modalButton.style.display = 'none'
+    } else {
+        logoutElement.style.display = 'none'
+        loginElement.style.display = 'block'
+        modalButton.style.display = 'none'
+    }
+
+});
+
+
+const openModal = function (e) {
+    e.preventDefault()
+    const modalId = e.target.getAttribute('href')
+    const modal = document.querySelector(modalId)
+    if (!modal) return
+
+    modal.style.display = 'flex'
+    modal.setAttribute('aria-hidden', false)
+    modal.setAttribute('aria-modal', 'true')
+    modal.addEventListener('click', closeModal)
+
+    const closeButton = modal.querySelector('.js-close-modal')
+    if (closeButton) {
+        closeButton.style.display = 'block'
+    }
+
 }
 
+const closeModal = function (e) {
+    const modal = e.currentTarget
+    if (!modal) return
+    e.preventDefault()
+    modal.style.display = 'none'
+    modal.setAttribute('aria-hidden', true)
+    modal.removeAttribute('aria-modal')
+    modal.removeEventListener('click', closeModal)
+    
+    const closeButton = modal.querySelector('.js-close-modal')
+    if (closeButton) {
+        closeButton.style.display = 'none'
+    }
+}
 
+document.querySelectorAll('.js-modal').forEach(button => {
+    button.addEventListener('click', openModal)
+})
 
-}); 
 
