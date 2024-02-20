@@ -1,6 +1,7 @@
 const gallery = document.querySelector(".gallery")
 let works = []
 const filtersContainer = containerFilter()
+const modalGallery = document.querySelector(".modal-gallery")
 
 const categories = [
     {
@@ -133,6 +134,19 @@ const openModal = function (e) {
         closeButton.style.display = 'block'
     }
 
+    let imageModal = ""
+
+    modalGallery.innerHTML = ""
+    works.forEach(work => {
+       imageModal += `
+       <div class="image-modal">
+       <img src="${work.imageUrl}">
+       <i class="fa-regular fa-trash-can">
+        </div>`
+    });
+
+    modalGallery.innerHTML = imageModal 
+
 }
 
 const closeModal = function (e) {
@@ -149,6 +163,8 @@ const closeModal = function (e) {
         closeButton.style.display = 'none'
     }
 }
+
+
 
 document.querySelectorAll('.js-modal').forEach(button => {
     button.addEventListener('click', openModal)
