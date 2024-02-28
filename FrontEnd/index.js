@@ -3,7 +3,7 @@ let works = []
 const filtersContainer = containerFilter()
 const modalGallery = document.querySelector(".modal-gallery")
 const logOut = document.getElementById("logout")
-
+const submitButton = document.getElementsByClassName(".btn-valider")
 const categories = [
     {
         "id": 4,
@@ -238,3 +238,22 @@ arrowBackButton.addEventListener('click', function () {
     ajouterButton.style.display = 'block'
 
 })
+
+const addWork = () => {
+    //allez chercher les elements HTML 
+    // const photoInput = 
+    // const categoryInput = 
+    // const titleInput = 
+    submitButton.addEventListener('submit', (event) => {
+
+        event.preventDefault()
+    // verifier les 3 const 
+    // if / else 
+    // si tout est bon faire form data
+    let formData = new FormData()
+    formData.append("title", titleInput.value)
+    //append tout les categories 
+    //faire le method const (fetch, local) 
+
+    })
+}

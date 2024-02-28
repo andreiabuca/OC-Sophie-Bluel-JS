@@ -326,31 +326,50 @@ a {
 }
 
 .js-close-modal {
-	font-size: 20px;
-	float: right;
+	font-size: 15px;
+	position: absolute;
+	right: 39%;
+	top: 20%;
 }
 
 hr {
 	width: 265px;
-    position: absolute;
-    bottom: 155px;
-    right: 500px;
+	position: absolute;
+	bottom: 155px;
+	right: 500px;
 	color: #B3B3B3;
 }
 
 .btn-ajouter {
 	display: flex;
-    font-family: 'Syne';
-    font-weight: 700;
-    color: white;
-    background-color: #1D6154;
-    margin: 2em auto;
-    width: 180px;
-    text-align: center;
-    border-radius: 60px;
-    height: 30px;
-    justify-content: center;
-    align-items: center;
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin: 2em auto;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px;
+	height: 30px;
+	justify-content: center;
+	align-items: center;
+	border: none;
+}
+
+.btn-valider {
+	display: flex;
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #A7A7A7;
+	margin: 2em auto;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px;
+	height: 30px;
+	justify-content: center;
+	align-items: center;
+	border: none;
 }
 
 .txt-galerie {
@@ -363,9 +382,38 @@ hr {
 	margin-top: 30px;
 }
 
-.modal-gallery {
+.txt-ajout {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: normal;
+	font-size: 20px;
+	margin-bottom: 20px;
+	margin-top: 30px;
 }
+
+.upload-button {
+	display: inline-block;
+	cursor: pointer;
+	padding: 10px 20px;
+	background-color: #CBD6DC;
+	color: #306685;
+	font-family: 'Work Sans';
+	border-radius: 20px;
+}
+
+.upload-container {
+	display: inline-block;
+    border: solid #E8F1F6; 
+	background-color: #E8F1F6;
+    border-radius: 5px; 
+    padding: 40px;
+}
+
+
+/* .modal-gallery {
+	display: flex;
+} */
 
 .gallery {
 	width: 100%;
@@ -383,6 +431,15 @@ hr {
 .gallery p {
 	margin-top: 7px;
 
+}
+
+.image-modal {
+	width: 100%;
+	display: grid;
+}
+
+.image-modal img {
+	width: 100%;
 }
 
 #contact {

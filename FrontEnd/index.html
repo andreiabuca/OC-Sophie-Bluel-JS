@@ -65,17 +65,45 @@
 			</div>
 
 			<aside id="modal" class="modal-aside js-modal" aria-hidden="true" role="dialog" style="display: none;">
+
+				<i class="fa-solid fa-xmark js-close-modal" id="close-btn"></i>
+
 				<div class="modal-wrapper js-modal-stop">
-					<i class="fa-solid fa-xmark js-close-modal"></i>
+					<i class="fa-solid fa-arrow-left"></i>
 					<p class="txt-galerie">Galerie Photo</p>
+
+					<p class="txt-ajout">Ajout photo</p>
+
 					<div class="modal-gallery"></div>
-					<!-- <hr> -->
-					<label for="imageInput" class="btn-ajouter">Ajouter une photo</label>
-					<input type="file" id="imageInput" accept="image/*" style="display: none;">
+
+					<form action="#" method="post" enctype="multipart/form-data" class="ajout-photo">
+						<div class="upload-container">
+							<i class="fa-regular fa-image" style="color: #b9c5cc;"></i>
+							<label for="file-upload" class="upload-button">
+								<span>+ Ajouter photo</span>
+								<input id="file-upload" type="file" style="display: none;">
+							</label>
+							<p>jpg, png : 4mo max</p>
+						</div>
 
 
+						<div class="label-title">
+							<label for="title" class="label">Titre</label>
+							<input type="text" class="labelModal" id="title" name="title">
+						</div>
+						<div class="label-category">
+							<label for="category" class="label">Catégorie</label>
+							<select name="category" id="category"></select>
+						</div>
 
+						<!-- <hr> -->
+						<button class="btn-ajouter">Ajouter une photo</button>
+
+						<button class="btn-valider" type="submit">Valider</button>
+					</form>
 				</div>
+
+				<!-- <i class="fa-solid fa-xmark js-close-modal" id="close-btn"></i> -->
 
 			</aside>
 
