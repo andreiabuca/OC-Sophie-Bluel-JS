@@ -107,16 +107,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const loginElement = document.getElementById('login')
     const logoutElement = document.getElementById('logout')
     const modalButton = document.querySelector('.projets-modifier')
+    const editionMode = document.getElementById('edit-bar')
 
     console.log('Token:', token)
 
     if (token) {
+        editionMode.style.display = 'flex'
         logoutElement.style.display = 'block'
         loginElement.style.display = 'none'
-
         modalButton.style.display = 'flex'
 
     } else {
+        editionMode.style.display = 'none'
         logoutElement.style.display = 'none'
         loginElement.style.display = 'block'
         modalButton.style.display = 'none'
@@ -239,21 +241,21 @@ arrowBackButton.addEventListener('click', function () {
 
 })
 
-const addWork = () => {
-    //allez chercher les elements HTML 
-    // const photoInput = 
-    // const categoryInput = 
-    // const titleInput = 
-    submitButton.addEventListener('submit', (event) => {
+// const addWork = () => {
+//     //allez chercher les elements HTML 
+//     // const photoInput = 
+//     // const categoryInput = 
+//     // const titleInput = 
+//     submitButton.addEventListener('submit', (event) => {
 
-        event.preventDefault()
-    // verifier les 3 const 
-    // if / else 
-    // si tout est bon faire form data
-    let formData = new FormData()
-    formData.append("title", titleInput.value)
-    //append tout les categories 
-    //faire le method const (fetch, local) 
+//         event.preventDefault()
+//         // verifier les 3 const 
+//         // if / else 
+//         // si tout est bon faire form data
+//         let formData = new FormData()
+//         formData.append("title", titleInput.value)
+//         //append tout les categories 
+//         //faire le method const (fetch, local) 
 
-    })
-}
+//     })
+// }
