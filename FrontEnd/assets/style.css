@@ -158,27 +158,6 @@ body {
     gap: 10px;
 }
 
-
-
-/* #edit-bar {
-	background-color: #000;
-	color: #FFF;
-	padding: 15px;
-	margin: 0;
-	width: 100%;
-	box-sizing: border-box;
-	display: none;
-}
-
-#edit-bar div {
-	display: flex;
-	justify-content: center;
-}
-
-#edit-bar p {
-	margin-left: 0.5rem;
-} */
-
 header {
 	display: flex;
 	justify-content: space-between;
@@ -342,18 +321,25 @@ a {
 
 }
 
-.js-close-modal {
-	font-size: 15px;
+.xmark-btn {
+	position: relative;
+}
+
+.fa-xmark {
+	/*
 	position: absolute;
 	right: 39%;
-	top: 20%;
+	top: 20%; */
+	font-size: 15px;
+	position: absolute;
+    margin-left: 313px;
+    margin-top: -185px;
 }
 
 hr {
-	width: 265px;
-	position: absolute;
-	bottom: 155px;
-	right: 500px;
+	width: 283px;
+	position: relative;
+	top: 35px;
 	color: #B3B3B3;
 }
 
@@ -371,6 +357,7 @@ hr {
 	justify-content: center;
 	align-items: center;
 	border: none;
+	margin-top: 70px;
 }
 
 .btn-valider {
@@ -407,6 +394,32 @@ hr {
 	font-size: 20px;
 	margin-bottom: 20px;
 	margin-top: 30px;
+}
+
+.modal-gallery {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-row-gap: 20px;
+	grid-column-gap: 20px;
+}
+
+.modal-gallery img {
+	width: 100%;
+}
+
+.image-modal article {
+	position: relative;
+}
+
+.fa-trash-can {
+	border: 1px solid #000;
+	border-radius: 3px;
+	background-color: #000;
+	color: #FFF;
+	padding: 5px; 
+	margin-left: 62px;
+	position: absolute;
 }
 
 .upload-button {
@@ -448,15 +461,6 @@ hr {
 .gallery p {
 	margin-top: 7px;
 
-}
-
-.image-modal {
-	width: 100%;
-	display: grid;
-}
-
-.image-modal img {
-	width: 100%;
 }
 
 #contact {

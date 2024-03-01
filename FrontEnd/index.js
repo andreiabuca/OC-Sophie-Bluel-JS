@@ -144,8 +144,10 @@ const openModal = function (e) {
     works.forEach(work => {
         imageModal += `
        <div class="image-modal">
+       <article>
        <i class="fa-regular fa-trash-can" data-id="${work.id}"></i>
         <img src="${work.imageUrl}">
+        </article>
         </div>`
     });
 
@@ -162,7 +164,7 @@ const openModal = function (e) {
                     method: "DELETE", //mettre authorization
                     headers: {
                         'Authorization': `Bearer ${token}`,
-                        // 'Content-Type': 'application/json'
+                        'Content-Type': 'application/json'
                     },
                 })
                     .then(response => {
@@ -241,21 +243,21 @@ arrowBackButton.addEventListener('click', function () {
 
 })
 
-// const addWork = () => {
-//     //allez chercher les elements HTML 
-//     // const photoInput = 
-//     // const categoryInput = 
-//     // const titleInput = 
-//     submitButton.addEventListener('submit', (event) => {
+const addWork = () => {
+    //allez chercher les elements HTML 
+    // const photoInput = 
+    // const categoryInput = 
+    // const titleInput = 
+    submitButton.addEventListener('submit', (event) => {
 
-//         event.preventDefault()
-//         // verifier les 3 const 
-//         // if / else 
-//         // si tout est bon faire form data
-//         let formData = new FormData()
-//         formData.append("title", titleInput.value)
-//         //append tout les categories 
-//         //faire le method const (fetch, local) 
+        event.preventDefault()
+        // verifier les 3 const 
+        // if / else 
+        // si tout est bon faire form data
+        let formData = new FormData()
+        formData.append("title", titleInput.value)
+        //append tout les categories 
+        //faire le method const (fetch, local) 
 
-//     })
-// }
+    })
+}
