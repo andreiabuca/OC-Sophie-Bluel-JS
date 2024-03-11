@@ -241,46 +241,51 @@ arrowBackButton.addEventListener('click', function () {
 
 })
 
-//Function pour ajouter de nouveaux projets 
-async function addWork() {
+// Gerer la soumisson du formulaire 
+document.getElementById('ajoutwork-form').addEventListener('submit', async (e) => {
+    e.preventDefault(); // Empêcher le comportement de soumission par défaut du formulaire
+
     try {
         const photo = document.querySelector('.button-ajoutwork').files[0];
-        const title = document.querySelector('.tittle-ajoutwork');
-        const category = document.querySelector('.category-ajoutwork');
+        const title = document.querySelector('.tittle-ajoutwork').value;
+        const category = document.querySelector('.category-ajoutwork').value;
 
-        if (photo.name <= 0 || (!['image/jpeg', 'image/png', 'image/jpg'].includes(photo.type))) {
-            return alert("L'image n'est pas sélectionné ou son format est incorrect.");
-        }
-        if (title.value.length <= 0) {
-            return alert("Veuillez entrer un titre.");
-        }
-        if (category.value.length <= 0) {
-            return alert("Veuillez sélectionner une catégorie.");
+        // Valider les données du formulaire
+        if (!photo || !title || !category) {
+            alert("Veuillez remplir tous les champs du formulaire.");
+            return;
         }
 
-        const formData = new FormData(document.getElementById('addwork-form'));
+        const formData = new FormData(); // Créer un objet FormData
+        formData.append('image', photo); // Ajouter la photo à FormData
+        formData.append('title', title); // Ajouter le titre à FormData
+        formData.append('category', category); // Ajouter la category à FormData
 
+        // Appeler l'API pour soumettre les données du formulaire
         const response = await fetch('http://localhost:5678/api/works', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
             },
             body: formData
-        })
+        });
+
         if (response.ok) {
-            showPhotoGallery();
+            // Gérer la réponse ok
             const data = await response.json();
-            generateWorks(data)
+            console.log("New work added:", data);
+        } else {
+            // Erreur response
+            console.error("Error adding new work:", response.status);
+            alert("Une erreur est survenue lors de l'ajout du projet.");
         }
-        else {
-            console.log("Erreur lors de la création du projet.");
-        }
+    } catch (error) {
+        // Erreurs inattendues
+        console.error("An error occurred:", error);
+        alert("Une erreur est survenue lors de l'ajout du projet.");
     }
-    catch (error) {
-        alert("Une erreur est survenue lors de l'ajout d'un nouveau projet.");
-        console.log(error);
-    }
-}
+});
+
 
 //Add categories  
 async function showCategories() {
@@ -333,100 +338,3 @@ document.getElementById('ajoutwork-form').addEventListener('submit', (e) => {
     e.preventDefault();
     addWork();
 })
-
-// //Ajouter un travail
-// const addWork = () => {
-
-//     // Function pour récupérer les catégories depuis le serveur
-//     const retrieveCategories = () => {
-//         fetch('http://localhost:5678/api/categories')
-//             .then(response => {
-//                 if (!response.ok) {
-//                     throw new Error('Network response was not ok');
-//                 }
-//                 return response.json();
-//             })
-//             .then(categories => {
-//                 const filtersContainer = document.getElementById("filters")
-//                 filtersContainer.innerHTML = ''
-
-//                 //Créer boutons pour chaque catégorie
-//                 const select = document.createElement('select')
-//                 select.id = 'category'
-
-//                 categories.forEach(category => {
-//                     const option = document.createElement('option')
-//                     option.value = category.id
-//                     option.textContent = category.name
-//                     select.appendChild(option)
-//                 })
-
-//                 const categoryContainer = document.querySelector('.label-category')
-//                 categoryContainer.appendChild(select)
-//             })
-//             .catch(error => {
-//                 console.error('Error retrieving categories:', error);
-//                 alert('An error occurred while retrieving categories');
-//             });
-//     };
-
-//     // Function pour valider le formulaire
-//     const validateForm = () => {
-//         const photoInput = document.getElementById('file-upload').files[0];
-//         const categoryInput = document.getElementById('category').value;
-//         const titleInput = document.getElementById('title').value;
-
-//         if (!photoInput || !categoryInput || !titleInput) {
-//             alert('Please fill in all fields');
-//             return false;
-//         }
-//         return true;
-//     };
-
-//     // Ajouter event listener pour la soumission du formulaire
-//     form.addEventListener('submit', function (event) {
-//         event.preventDefault();
-
-//         if (!validateForm()) {
-//             return;
-//         }
-
-//         // Ajouter les données du formulaire
-//         const formData = new FormData();
-//         const photoInput = document.getElementById('file-upload').files[0];
-//         const categoryInput = document.getElementById('category').value;
-//         const titleInput = document.getElementById('title').value;
-//         const token = localStorage.getItem('token');
-
-//         formData.append('title', titleInput);
-//         formData.append('category', categoryInput);
-//         formData.append('photo', photoInput);
-
-//         // Fetch pour ajouter le travail
-//         fetch('http://localhost:5678/api/works', {
-//             method: 'POST',
-//             body: formData,
-//             headers: {
-//                 'Authorization': `Bearer ${token}`,
-//             },
-//         })
-//             .then(response => {
-//                 if (!response.ok) {
-//                     throw new Error('Network response was not ok');
-//                 }
-//                 return response.json();
-//             })
-//             .then(data => {
-//                 console.log('New project added:', data);
-//                 alert('New project added successfully!');
-//             })
-//             .catch(error => {
-//                 console.error('Error adding new project:', error);
-//                 alert('An error occurred while adding the project');
-//             });
-//     });
-
-//     // // Appeler la fonction pour récupérer les catégories
-//     // retrieveCategories();
-// };
-
