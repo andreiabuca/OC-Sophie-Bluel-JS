@@ -65,47 +65,62 @@
 			</div>
 
 			<aside id="modal" class="modal-aside js-modal" aria-hidden="true" role="dialog" style="display: none;">
-
-				<div class="xmark-btn">
-					<i class="fa-solid fa-xmark js-close-modal" id="close-btn"></i>
-				</div>
-
 				<div class="modal-wrapper js-modal-stop">
-					<i class="fa-solid fa-arrow-left"></i>
+
+					<div class="control-modal-btn">
+						<button class="arrow-left-btn">
+							<i class="fa-solid fa-arrow-left"></i>
+						</button>
+						<button class="xmark-btn">
+							<i class="fa-solid fa-xmark js-close-modal" id="close-btn"></i>
+						</button>
+					</div>
+
 					<p class="txt-galerie">Galerie Photo</p>
 
 					<p class="txt-ajout">Ajout photo</p>
 
 					<div class="modal-gallery"></div>
 
-					<form action="#" method="post" enctype="multipart/form-data" class="ajout-photo">
-						<div class="upload-container">
-							<i class="fa-regular fa-image" style="color: #b9c5cc;"></i>
-							<label for="file-upload" class="upload-button">
-								<span>+ Ajouter photo</span>
-								<input id="file-upload" type="file" style="display: none;">
-							</label>
-							<p>jpg, png : 4mo max</p>
-						</div>
-
-
-						<div class="label-title">
-							<label for="title" class="label">Titre</label>
-							<input type="text" class="labelModal" id="title" name="title">
-						</div>
-						<div class="label-category">
-							<label for="category" class="label">Catégorie</label>
-							<select name="category" id="category"></select>
-						</div>
-
-						<hr>
+					<div class="modal-btn-ajouter">
 						<button class="btn-ajouter">Ajouter une photo</button>
+					</div>
 
-						<button class="btn-valider" type="submit">Valider</button>
-					</form>
+					<div class="modal-ajout-work">
+						<form action="" method="post" enctype="multipart/form-data" class="ajout-photo"
+							id="ajoutwork-form">
+							<div class="upload-work">
+								<div class="upload-work-img"></div>
+								<div class="upload-work-form">
+									<i class="fa-regular fa-image"></i>
+
+									<input type="file" name="image" accept=".png, .jpg" class="button-ajoutwork"
+										required>
+									<button>+Ajouter photo</button>
+									<p>jpg, png : 4mo max</p>
+								</div>
+							</div>
+
+							<div class="inputs-ajoutwork">
+								<label for="title">Titre</label>
+								<input type="text" class="tittle-ajoutwork" id="title" name="title" required>
+
+								<label for="category">Catégorie</label>
+								<select name="category" id="category" class="category-ajoutwork">
+
+								</select>
+							</div>
+
+
+
+							<input type="submit" class="button-submitwork" value="Valider">
+
+						</form>
+
+
+					</div>
 				</div>
 
-				<!-- <i class="fa-solid fa-xmark js-close-modal" id="close-btn"></i> -->
 
 			</aside>
 
