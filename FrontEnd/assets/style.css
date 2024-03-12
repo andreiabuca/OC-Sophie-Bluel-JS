@@ -143,15 +143,15 @@ body {
 	background-color: #FFFEF8;
 }
 
+#edit-bar {
+	margin: 0;
+}
+
 .edit-mode {
 	background-color: #000; 
     color: #fff; 
-    padding: 20px 0; 
+    padding: 20px; 
     width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000; 
 	display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -165,7 +165,7 @@ header {
 }
 
 section {
-	margin: 50px 0
+	margin: 50px 0;
 }
 
 h1 {
@@ -321,43 +321,16 @@ a {
 
 }
 
-.control-modal-btn {
+.control-btn {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 10px;
+	justify-content: space-between;
 }
 
-.arrow-left-btn {
+.arrow-left-btn, .xmark-btn {
 	border: none;
 	background: none;
 }
-
-.xmark-btn {
-	border: none;
-	background: none;
-}
-/* .xmark-btn {
-	position: relative;
-} */
-
-/* .fa-xmark {
-	
-	position: absolute;
-	right: 39%;
-	top: 20%;
-	font-size: 15px;
-	position: absolute;
-    margin-left: 313px;
-    margin-top: -185px;
-} */
-
-/* hr {
-	width: 283px;
-	position: relative;
-	top: 35px;
-	color: #B3B3B3;
-} */
 
 .modal-btn-ajouter {
 	border-top: 1px solid #B3B3B3;

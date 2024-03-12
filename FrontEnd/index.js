@@ -210,6 +210,7 @@ secondModalElements.forEach(element => {
     element.style.display = 'none'
 })
 
+
 //Ajouter EventListener pour le bouton "Ajouter"
 const ajouterButton = document.querySelector('.modal-btn-ajouter')
 ajouterButton.addEventListener('click', function () {
