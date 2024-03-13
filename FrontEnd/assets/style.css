@@ -298,6 +298,7 @@ a {
 	border: none;
 	background: transparent;
 	font-family: 'Work Sans';
+	cursor: pointer;
 }
 
 .modal-aside {
@@ -330,6 +331,7 @@ a {
 .arrow-left-btn, .xmark-btn {
 	border: none;
 	background: none;
+	cursor: pointer;
 }
 
 .modal-btn-ajouter {
@@ -351,6 +353,7 @@ a {
 	justify-content: center;
 	align-items: center;
 	border: none;
+	cursor: pointer;
 } 
 
 .btn-valider {
@@ -458,6 +461,7 @@ a {
 	opacity: 0;
 	position: absolute;
 	bottom: 48%;
+	cursor: pointer;
 }
 
 .upload-work-form button {
@@ -494,34 +498,6 @@ a {
     font-weight: bold;
 	color: #3D3D3D;
 }
-/* .upload-button {
-	cursor: pointer;
-	padding: 10px 20px;
-	background-color: #CBD6DC;
-	color: #306685;
-	font-family: 'Work Sans';
-	border-radius: 20px;
-	margin-top: 10px;
-} */
-
-/* .label-title,
-.label-category {
-	display: flex;
-	flex-direction: column;
-}
-
-.label {
-	margin-top: 20px;
-	margin-bottom: 10px;
-	font-weight: bold;
-}
-
-.labelModal,
-#category {
-	padding: 10px;
-	box-shadow: 0px 4px 14px 0px #00000017;
-	border: none;
-} */
 
 .gallery {
 	width: 100%;
