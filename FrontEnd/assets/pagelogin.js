@@ -3,7 +3,7 @@ const email = document.querySelector("#email")
 const password = document.querySelector("#password")
 const submit = document.querySelector("#submit")
 const form = document.querySelector("form")
-const messageEmail = document.querySelector(".message-email")
+const messageEmail = document.querySelector("#message-email")
 
 const apiURL = "http://localhost:5678/api/users/login"
 
@@ -63,10 +63,12 @@ form.addEventListener("submit", async (event) => {
                 window.location.href = '/FrontEnd/index.html';
             } else {
                 console.error("Token manquant dans la réponse de l'API")
+                messageEmail.style.display = "flex";
             }
 
         } else {
             console.error("Erreur lors de la requête vers l'API :", response.status)
+            messageEmail.style.display = "flex"
         }
 
     } catch (error) {
